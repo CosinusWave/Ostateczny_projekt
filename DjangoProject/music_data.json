@@ -1,0 +1,32 @@
+{
+  "Marmur":
+  {
+    "artistName": "Taco Hemingway",
+    "solista": "True",
+    "artistGender": "man",
+    "yearOfRelease": 2014,
+    "genre": {
+      "genre1": "rap"
+    }
+},
+  "Blues":
+  {
+    "artistName": "Breakout",
+    "solista": "False",
+    "vocalistGender": "man",
+    "yearOfRelease": 1971,
+    "genre": {
+      "genre1": "rock"
+    }
+  },
+    "Nikt Nam Nie Zrobił Nic":
+  {
+    "artistName": "Hańba!",
+    "solista": "False",
+    "vocalistGender": "man",
+    "yearOfRelease": 2020,
+    "genre": {
+      "genre1": "punk"
+    }
+  }
+}
