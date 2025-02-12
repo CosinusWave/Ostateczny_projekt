@@ -1,0 +1,6 @@
+Kacper Kulawik, nr albumu 79560, grupa ćwiczeniowa 2
+
+
+Ten projekt pozwala z perspektywy uzytkownika (pracownika recepcji biblioteki)
+dodawać książki i dvd do użytkowników i zakładać nowe karty biblioteczne.
+Książki, dvd i regały dodaje się poprzez widok admina.

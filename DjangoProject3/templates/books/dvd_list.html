@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %} Lista DVD{% endblock %}
+
+{% block content %}
+    <h1>Lista DVD</h1>
+    <p>NAZWA FILMU || REŻYSER || DATA WYDANIA</p>
+    <ul>
+        {% for dvd in DVD %}
+            <li>{{ dvd.title }} - {{ dvd.director}} - {{ dvd.release_date }} {% if DVD.is_borrowed %}(Wypożyczona){% endif %}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}`
+

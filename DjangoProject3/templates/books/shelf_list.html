@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %} Lista Regałów{% endblock %}
+
+{% block content %}
+    <h1>Lista Regałów</h1>
+    <ul>
+        {% for shelf in shelves %}
+            <li>
+                <a href="{% url 'shelf_content' shelf.id %}">{{ shelf.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}`
+

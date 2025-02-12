@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <link href="{% static "css/myapp.css" %}" rel="stylesheet">
+    </head>
+    <body>
+        <div id="header" >
+            Aplikacja biblioteczna || <a href="{% url 'welcome' %}">powrót do strony głównej</a> || <a href="/admin">ADMIN</a>
+        </div>
+        <div id="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+    </body>
+</html>

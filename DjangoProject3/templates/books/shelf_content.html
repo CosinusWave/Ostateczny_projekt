@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %} Zawartość regałów {% endblock %}
+
+
+{% block content %}
+    <h1>Regał: {{ shelf.name }}</h1>
+
+    <h2>Książki:</h2>
+    <ul>
+        {% for book in books %}
+            <li>{{ book.title }} - Autor: {{ book.author }}</li>
+        {% empty %}
+            <li>Brak książek na tym regale.</li>
+        {% endfor %}
+    </ul>
+
+    <h2>DVD:</h2>
+    <ul>
+        {% for dvd in dvds %}
+            <li>{{ dvd.title }} - Reżyser: {{ dvd.director }}</li>
+        {% empty %}
+            <li>Brak DVD na tym regale.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'shelf_list' %}">Powrót do listy regałów</a>
+
+{% endblock %}`

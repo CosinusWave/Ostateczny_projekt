@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %} Dodaj użytkownika {% endblock %}
+
+{% block content %}
+   <h1>Dodaj nowego użytkownika</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Dodaj użytkownika</button>
+    </form>
+    <a href="{% url 'user_list' %}">Powrót do listy użytkowników</a>
+{% endblock %}`
+

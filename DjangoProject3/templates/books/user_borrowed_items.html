@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %} Wypożyczenia użytkownika: {{ user.first_name }} {{ user.last_name }} {% endblock %}
+
+{% block content %}
+<h1>Wypożyczenia użytkownika: {{ user.first_name }} {{ user.last_name }}</h1>
+
+<h2>Książki:</h2>
+<ul>
+    {% for book in books %}
+        <li>{{ book.title }} - Wypożyczono: {{ book.borrowed_date }}</li>
+    {% empty %}
+        <li>Brak wypożyczonych książek.</li>
+    {% endfor %}
+</ul>
+
+<h2>DVD:</h2>
+<ul>
+    {% for dvd in dvds %}
+        <li>{{ dvd.title }} - Wypożyczono: {{ dvd.borrowed_date }}</li>
+    {% empty %}
+        <li>Brak wypożyczonych DVD.</li>
+    {% endfor %}
+</ul>
+
+<!-- Formularz do wypożyczenia książki -->
+<h3>Wypożycz książkę</h3>
+<form method="POST">
+    {% csrf_token %}
+    {{ book_form.as_p }}
+    <button type="submit" name="book_form">Wypożycz książkę</button>
+</form>
+
+<!-- Formularz do wypożyczenia DVD -->
+<h3>Wypożycz DVD</h3>
+<form method="POST">
+    {% csrf_token %}
+    {{ dvd_form.as_p }}
+    <button type="submit" name="dvd_form">Wypożycz DVD</button>
+</form>
+
+<a href="{% url 'user_list' %}">Powrót do listy użytkowników</a>
+{% endblock %}

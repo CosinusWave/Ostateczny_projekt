@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %} Lista Użytkowników{% endblock %}
+
+{% block content %}
+  <h1>Lista Użytkowników</h1>
+    <ul>
+        {% for user in users %}
+            <li><a href='{% url 'user_borrowed_items' user.library_card_number %}'>{{ user.first_name }} {{ user.last_name }} || Email: {{ user.email }} || Numer telefonu: {{ user.phone_number }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_user' %}">Dodaj nowego użytkownika</a>
+{% endblock %}`

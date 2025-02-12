@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %} Lista książek{% endblock %}
+
+{% block content %}
+    <h1>Lista książek</h1>
+    <p>NAZWA KSIĄŻKI || AUTOR</p>
+    <ul>
+        {% for book in books %}
+            <li>{{ book.title }} - {{ book.author }}</li>
+            <p>Regał: {{ book.shelf }}{% if book.is_borrowed %}(Wypożyczona przez: {{ book.borrowed_by.first_name }} {{ book.borrowed_by.last_name }}){% endif %}</p>
+
+            {% if book.is_borrowed %}
+                <!-- Przycisk do zwrócenia książki -->
+                <form action="{% url 'return_book' book.id %}" method="POST">
+                    {% csrf_token %}
+                    <button type="submit">Zwróć książkę</button>
+                </form>
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% endblock %}

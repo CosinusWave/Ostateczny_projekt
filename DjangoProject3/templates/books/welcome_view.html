@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %} Witamy!{% endblock %}
+
+{% block content %}
+   <h1>Witamy w aplikacji do zażadzania systemem bibliotecznym!</h1>
+    <p><a href="{% url 'book-list' %}">baza książek</a></p>
+    <p><a href="{% url 'dvd-list' %}">baza DVD</a></p>
+    <p><a href="{% url 'shelf_list' %}">baza regałów</a></p>
+    <p><a href="{% url 'user_list' %}">baza klientów</a></p>
+{% endblock %}`
+
